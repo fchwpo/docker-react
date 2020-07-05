@@ -1,0 +1,12 @@
+FROM node:12
+
+WORKDIR '/app'
+
+COPY ./package.json .
+
+RUN npm i
+
+# Not required as host volume ${pwd} is mounted in /app
+COPY . . 
+
+CMD ["npm", "run", "start"]
