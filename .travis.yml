@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before-install:
+    - docker build -f Dockerfile.dev -t fchwpo/docker-react . 
+
+script:
+    - docker run fchwpo/docker-react npm run test
