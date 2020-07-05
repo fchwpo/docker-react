@@ -7,7 +7,7 @@ CMD ["npm", "run", "build"]
 
 
 FROM nginx
-EXPOSE 80 443
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # WE CAN HAVE MULTIPLE PAHASES IN DOCKER BUILD PROCESS
