@@ -6,4 +6,4 @@ before-install:
     - docker build -f Dockerfile.dev -t fchwpo/docker-react . 
 
 script:
-    - docker run fchwpo/docker-react npm run test
+    - docker run -e CI=true fchwpo/docker-react npm run test
